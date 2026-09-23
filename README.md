@@ -95,6 +95,20 @@ The strategy:
 
 This gave us a robust baseline: earn spread when possible, but do not let inventory drift too far.
 
+### Manual Round 1 — "An Intarian Welcome" (clearing-price auction)
+
+We could place one order each on two goods with crossed order books and known resale prices: Dryland Flax at 30, and Ember Mushroom at 20 minus a 0.10 fee. The key detail was that every fill happens at the single clearing price with the highest volume, not at our submitted limit. The bid therefore only decides whether we get filled, not what we pay. We then found the clearing price that has the best volume and profit ratio and bid above it just enough to get filled with at that price with the highest possible volume.
+
+### Manual Round 2 — Research, Scale, Speed (our best manual round)
+
+We had to allocate a 50,000 budget to three attributes to get the best possible results. PnL was calculated as Research × Scale × Speed − budget used. We split the problem into a deterministic part and a game-theory part. Research scales logarithmically, Scale is linear from 0 to 7 and Speed is the percentile rank of the bid and gives a multiplier between 0.1 and 0.9.
+
+1. **Research vs Scale is fully optimisable.** For whatever budget remains after Speed, maximising `ln(1 + r) · s` subject to `r + s = B` gives `s = (1 + r) · ln(1 + r)`. Research grows logarithmically and saturates quickly, so most of the remaining budget goes to Scale.
+2. **Speed is a rank game.** Only relative position matters. We expected many teams to reason the same way and pick Speed in the 30–40 range to sit just above the median. That clustering means only about 10 percentage points of Speed spend separate a ~0.3 multiplier from a ~0.7 one. The multiplier is steep inside that band, while the extra spend needed to clear it is cheap but worthwhile.
+3. **Decision.** We deliberately bid above the expected cluster rather than inside it, then applied the optimal split to what remained: **Speed 43, Research 15, Scale 42**.
+
+This was our best manual round, we made >220K and were 1 off the true optimal speed (which ended up being 42 at a 0.7 multiplier).
+
 ## Rounds 3–4
 
 Implemented in [`trader_r3-4.py`](./trader_r3-4.py).
@@ -199,6 +213,17 @@ Some counterparties appeared to be informative for specific products. For exampl
 Instead, we spent most of the time in Round 4 making adjustments to the Round 3 trader to both price and size based on current position for the assets from Round 3 - `HYDROGEL_PACK` and `VELVETFRUIT_EXTRACT`.
 
 When inventory was near zero, it could quote both sides more freely. When inventory became large, it became more conservative and prioritized reducing exposure. This mattered especially for the VEV products, because option-like instruments could move quickly when the underlying shifted. We market-maked all products available, except the deep OTM, and this skewing strategy yielded a large portion of our Phase 2 profits, making us climb up the ranks from our slow Round 3 start of Phase 2.
+
+### Manual Round 3 — "The Celestial Gardeners' Guild" (two-bid auction)
+
+Sellers each have a hidden reserve price, spread evenly between 670 and 920 in steps of 5, and anything we buy can be resold for 920. We submit two bids: a seller whose reserve is below our first bid b₁ sells to us at b₁; otherwise, a seller whose reserve is below our second bid b₂ sells to us at b₂, but if b₂ is below the average second bid of all teams, our profit on those trades is multiplied by `((920 − avg) / (920 − b₂))³`, which shrinks quickly the further below the average we are.
+
+**Our thinking:** Ignoring the penalty, the second bid that maximises profit is 855–860. However, the penalty is lopsided. Bidding slightly too high costs a few points of margin, while landing below the average cuts profit by a cubic factor. We expected most teams to see the same risk and bid above 860, pushing the average up. We therefore played it safe and bid **b₂ = 870** to stay above the average, giving up a little margin in exchange for protection against the penalty. With b₂ fixed, the first bid has no competitive element and can be solved directly: expected profit is maximised at b₁ = (670 + b₂) / 2, giving **b₁ = 770**.
+
+### Manual Round 4 — Aether Crystal exotic options
+
+We could trade vanilla and exotic options on a simulated underlying with 251% volatility, scored as the average PnL over 100 paths. The quoted prices implied only about 212% volatility, so the options were cheap relative to how the underlying would actually be simulated. We went **net long volatility**. That loses on paths that stay flat but gains heavily in both tails, and averaging over 100 paths lets the positive expected value come through.
+
 
 ## Round 5 / Phase 2
 
