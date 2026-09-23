@@ -97,7 +97,7 @@ This gave us a robust baseline: earn spread when possible, but do not let invent
 
 ### Manual Round 1 — "An Intarian Welcome" (clearing-price auction)
 
-We could place one order each on two goods with crossed order books and known resale prices: Dryland Flax at 30, and Ember Mushroom at 20 minus a 0.10 fee. The key detail was that every fill happens at the single clearing price with the highest volume, not at our submitted limit. The bid therefore only decides whether we get filled, not what we pay. We then found the clearing price that has the best volume and profit ratio and bid above it just enough to get filled with at that price with the highest possible volume.
+We could place one order each on two goods with crossed order books and known resale prices: Dryland Flax at 30, and Ember Mushroom at 20 minus a 0.10 fee. The key detail was that every fill happens at the single clearing price with the highest volume, not at our submitted limit. The bid therefore only decides whether we get filled, not what we pay. We then found the clearing price that has the best volume and profit ratio and bid above it just enough to get filled with at that price with the highest possible volume. We ended up getting the maximum possible PnL in this round
 
 ### Manual Round 2 — Research, Scale, Speed (our best manual round)
 
@@ -220,6 +220,8 @@ Sellers each have a hidden reserve price, spread evenly between 670 and 920 in s
 
 **Our thinking:** Ignoring the penalty, the second bid that maximises profit is 855–860. However, the penalty is lopsided. Bidding slightly too high costs a few points of margin, while landing below the average cuts profit by a cubic factor. We expected most teams to see the same risk and bid above 860, pushing the average up. We therefore played it safe and bid **b₂ = 870** to stay above the average, giving up a little margin in exchange for protection against the penalty. With b₂ fixed, the first bid has no competitive element and can be solved directly: expected profit is maximised at b₁ = (670 + b₂) / 2, giving **b₁ = 770**.
 
+It turned out we overestimated the collective risk aversion and were slightly above the optimal but we still made decent profit
+
 ### Manual Round 4 — Aether Crystal exotic options
 
 We could trade vanilla and exotic options on a simulated underlying with 251% volatility, scored as the average PnL over 100 paths. The quoted prices implied only about 212% volatility, so the options were cheap relative to how the underlying would actually be simulated. We went **net long volatility**. That loses on paths that stay flat but gains heavily in both tails, and averaging over 100 paths lets the positive expected value come through.
@@ -326,6 +328,14 @@ However, these directional snackpack strategies performed badly under the IMC fi
 Because of that, we did not activate the aggressive snackpack basket traders in the final version. We kept plain market making for snackpacks, with only the safer pair overlay for `SNACKPACK_CHOCOLATE` and `SNACKPACK_VANILLA`.
 
 This was one of the clearest lessons from the competition: a relationship can be statistically real and still not be tradable after fills, spread, and inventory risk are included.
+
+### Manual Round 5 — Ignith market (news-driven portfolio)
+
+We have a budget of 1,000,000 to split across nine goods, taking a long or short position in each and holding it for one day, using a set of news articles as our only source of information. Allocating x% of the budget to one good costs a fee of `(x / 100)² × 1,000,000`; total allocation cannot exceed 100% and unused budget is lost; and each good's return starts from a fixed anchor but moves within a set range depending on how all teams trade it.
+
+**Our thinking:** The fee grows with the square of position size, so every extra unit costs more than the one before. For a good with expected return r, profit is `r · x · B − x² · B`, which peaks at x = r / 2. A 10% position therefore only pays off if we expect roughly a 20% move. We read each article with two questions in mind: does the news actually move the price, and has it already happened? We bet heavily only on the high-conviction goods, such as an index inclusion that forces fund buying and a health scare that had halted sales. Low-conviction stories, meaning hype, unreliable sources or events already priced in, got very small positions or none at all. Because of the fees, we used only **53% of the budget**, since pushing more capital into weaker ideas would have cost more in fees than it was expected to earn. 
+
+This strategy made 89K which was well above the average and median placing (35K, 60K respectively).
 
 ## Important Implementation Details
 
