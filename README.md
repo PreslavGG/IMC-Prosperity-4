@@ -30,6 +30,10 @@ Each algorithmic submission implements a `Trader` class. At every timestamp, the
 
 The trader then returns orders for each product. The challenge is not only to find profitable signals, but also to quote safely, manage inventory, and avoid strategies that look good statistically but fail under the competition's fill model.
 
+### Manual Trading
+
+Alongside the algorithmic rounds, each round included a one-shot manual challenge. These were optimisation problems with a game-theory component: part of the payoff depended only on our own choices and could be solved analytically, while the rest depended on what the other participants submitted. Our approach was to solve the deterministic part first, then use simulation or judgement about the field to position against the crowd. We used the Discord channels to discover trends (or often what people were deliberately hiding) to support our intuition
+
 ## Repository Structure
 
 ```text
