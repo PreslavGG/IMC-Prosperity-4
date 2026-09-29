@@ -357,10 +357,10 @@ We have a budget of 1,000,000 to split across nine goods, taking a long or short
 
 <img width="682" height="365" alt="image" src="https://github.com/user-attachments/assets/e1577347-e706-4d57-b526-281c80458bec" />
 
+<img width="516" height="712" alt="image" src="https://github.com/user-attachments/assets/28feb6bb-64b8-4bdb-a6be-81feaef4dfda" />
+
 <br><br>
 This strategy made **89,308 XIRECS** which was well above the average and median at 35,665 and 60,457 respectively and increased our total **PnL for Phase 2 to 446,794 XIRECS**.
-
-<img width="516" height="712" alt="image" src="https://github.com/user-attachments/assets/28feb6bb-64b8-4bdb-a6be-81feaef4dfda" />
 
 <br><br>
 P.S. We solved all 4 of the competition side quests / puzzles.
