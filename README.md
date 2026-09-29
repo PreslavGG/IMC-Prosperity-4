@@ -353,12 +353,14 @@ We ended up getting a **PnL of around 118,391 XIRECS** in algorithmic Round 5.
 We have a budget of 1,000,000 to split across nine goods, taking a long or short position in each and holding it for one day, using a set of news articles as our only source of information. Allocating x% of the budget to one good costs a fee of `(x / 100)² × 1,000,000`; total allocation cannot exceed 100% and unused budget is lost; and each good's return starts from a fixed anchor but moves within a set range depending on how all teams trade it.
 
 **Our thinking:** The fee grows with the square of position size, so every extra unit costs more than the one before. For a good with expected return r, profit is `r · x · B − x² · B`, which peaks at x = r / 2. A 10% position therefore only pays off if we expect roughly a 20% move. We read each article with two questions in mind: does the news actually move the price, and has it already happened? We bet heavily only on the high-conviction goods, such as an index inclusion that forces fund buying and a health scare that had halted sales. Low-conviction stories, meaning hype, unreliable sources or events already priced in, got very small positions or none at all. Because of the fees, we used only **53% of the budget**, since pushing more capital into weaker ideas would have cost more in fees than it was expected to earn. 
+<br>
 
 <img width="341" height="183" alt="IMG_1161" src="https://github.com/user-attachments/assets/65cbba65-4102-4a4c-9292-1c66167d2da4" />
+<br>
 
-This strategy made **89,308 XIRECS** which was well above the average and median at 35K and 60K respectively and increased our total **PnL for Phase 2 to 446,794 XIRECS**.
+This strategy made **89,308 XIRECS** which was well above the average and median at 35,665 and 60,457 respectively and increased our total **PnL for Phase 2 to 446,794 XIRECS**.
 
-<img width="339" height="527" alt="IMG_4915" src="https://github.com/user-attachments/assets/95f35f71-aaa3-494f-9b5e-c842114845ef" />
+<img width="516" height="712" alt="image" src="https://github.com/user-attachments/assets/28feb6bb-64b8-4bdb-a6be-81feaef4dfda" />
 
 <br><br>
 P.S. We solved all 4 of the competition side quests / puzzles.
