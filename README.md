@@ -224,8 +224,6 @@ Instead, we spent most of the time in Round 4 making adjustments to the Round 3 
 
 When inventory was near zero, it could quote both sides more freely. When inventory became large, it became more conservative and prioritized reducing exposure. This mattered especially for the VEV products, because option-like instruments could move quickly when the underlying shifted. We market-maked all products available, except the deep OTM, and this skewing strategy yielded a large portion of our Phase 2 profits, making us climb up the ranks from our slow Round 3 start of Phase 2.
 
-We finished algorithmic Round 4 with a **PnL of around 9,000 XIRECS**
-
 ### Manual Round 3 — "The Celestial Gardeners' Guild" (two-bid auction)
 
 Sellers each have a hidden reserve price, spread evenly between 670 and 920 in steps of 5, and anything we buy can be resold for 920. We submit two bids: a seller whose reserve is below our first bid b₁ sells to us at b₁; otherwise, a seller whose reserve is below our second bid b₂ sells to us at b₂, but if b₂ is below the average second bid of all teams, our profit on those trades is multiplied by `((920 − avg) / (920 − b₂))³`, which shrinks quickly the further below the average we are.
@@ -234,12 +232,13 @@ Sellers each have a hidden reserve price, spread evenly between 670 and 920 in s
 
 **Our thinking:** Ignoring the penalty, the second bid that maximises profit is 850–860. However, the penalty is lopsided. Bidding slightly too high costs a few points of margin, while landing below the average cuts profit by a cubic factor. We expected most teams to see the same risk and bid above 860, pushing the average up. We therefore played it safe and bid **b₂ = 870** to stay above the average, giving up a little margin in exchange for protection against the penalty. With b₂ fixed, the first bid has no competitive element and can be solved directly: expected profit is maximised at b₁ = (670 + b₂) / 2, giving **b₁ = 770**.
 
-It turned out we overestimated the collective risk aversion and were slightly above the optimal but we still made decent profit of **73,902 XIRECS**
+It turned out we overestimated the collective risk aversion and were slightly above the optimal but we still made decent profit of **~76,900 XIRECS**
 
 ### Manual Round 4 — Aether Crystal exotic options
 
 We could trade vanilla and exotic options on a simulated underlying with 251% volatility, scored as the average PnL over 100 paths. The quoted prices implied only about 212% volatility, so the options were cheap relative to how the underlying would actually be simulated. We went **net long volatility**. That loses on paths that stay flat but gains heavily in both tails, and averaging over 100 paths lets the positive expected value come through.
 
+Both the algorithmic and manual round 4 added **165,194 XIRECS** to our total PnL, an awesome increase after the tough Round 3.
 
 ## Round 5 / Phase 2
 
@@ -343,16 +342,24 @@ Because of that, we did not activate the aggressive snackpack basket traders in 
 
 This was one of the clearest lessons from the competition: a relationship can be statistically real and still not be tradable after fills, spread, and inventory risk are included.
 
+We ended up getting a **PnL of around 118,391 XIRECS** in algorithmic Round 5.
+
 ### Manual Round 5 — Ignith market (news-driven portfolio)
 
 We have a budget of 1,000,000 to split across nine goods, taking a long or short position in each and holding it for one day, using a set of news articles as our only source of information. Allocating x% of the budget to one good costs a fee of `(x / 100)² × 1,000,000`; total allocation cannot exceed 100% and unused budget is lost; and each good's return starts from a fixed anchor but moves within a set range depending on how all teams trade it.
 
 **Our thinking:** The fee grows with the square of position size, so every extra unit costs more than the one before. For a good with expected return r, profit is `r · x · B − x² · B`, which peaks at x = r / 2. A 10% position therefore only pays off if we expect roughly a 20% move. We read each article with two questions in mind: does the news actually move the price, and has it already happened? We bet heavily only on the high-conviction goods, such as an index inclusion that forces fund buying and a health scare that had halted sales. Low-conviction stories, meaning hype, unreliable sources or events already priced in, got very small positions or none at all. Because of the fees, we used only **53% of the budget**, since pushing more capital into weaker ideas would have cost more in fees than it was expected to earn. 
 
+This strategy made **89,308 XIRECS** which was well above the average and median at 35K and 60K respectively and added to the overall **PnL for Rounds 3-5 of 446,794 XIRECS**.
+
 <img width="339" height="527" alt="IMG_4915" src="https://github.com/user-attachments/assets/95f35f71-aaa3-494f-9b5e-c842114845ef" />
 <img width="341" height="183" alt="IMG_1161" src="https://github.com/user-attachments/assets/65cbba65-4102-4a4c-9292-1c66167d2da4" />
 
-This strategy made **89,308 XIRECS** which was well above the average and median at 35K and 60K respectively.
+
+P.S. We solved all 4 of the competition side quests / puzzles.
+
+<img width="1401" height="539" alt="IMG_3559" src="https://github.com/user-attachments/assets/e9efcb7b-75da-4cd5-96da-34979492196e" />
+
 
 ## Important Implementation Details
 
