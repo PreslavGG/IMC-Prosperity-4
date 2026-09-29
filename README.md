@@ -111,10 +111,11 @@ We had to allocate a 50,000 budget to three attributes to get the best possible 
 2. **Speed is a rank game.** Only relative position matters. We expected many teams to reason the same way and pick Speed in the 30–40 range to sit just above the median. That clustering means only about 10 percentage points of Speed spend separate a ~0.3 multiplier from a ~0.7 one. The multiplier is steep inside that band, while the extra spend needed to clear it is cheap but worthwhile.
 3. **Decision.** We deliberately bid above the expected cluster rather than inside it, then applied the optimal split to what remained: **Speed 43, Research 15, Scale 42**.
 
-<img width="791" height="741" alt="IMG_9015" src="https://github.com/user-attachments/assets/5c8113f5-4b74-41c8-9b83-c54eb6986fd8" />
-
 This was our **best manual round**, we made **217,551 XIRECS** and were 1 off the true optimal speed (which ended up being 42 at a 0.7 multiplier).
 
+<img width="791" height="741" alt="IMG_9015" src="https://github.com/user-attachments/assets/5c8113f5-4b74-41c8-9b83-c54eb6986fd8" />
+
+<br><br>
 We finished **Phase 1** with a **PnL of 500,324 XIRECS** and ranked **74th** overall.
 
 <img width="806" height="704" alt="IMG_8245" src="https://github.com/user-attachments/assets/f09f83ac-f589-4a2a-a346-8758c79d2204" />
@@ -356,9 +357,10 @@ We have a budget of 1,000,000 to split across nine goods, taking a long or short
 This strategy made **89,308 XIRECS** which was well above the average and median at 35K and 60K respectively and added to the overall **PnL for Rounds 3-5 of 446,794 XIRECS**.
 
 <img width="339" height="527" alt="IMG_4915" src="https://github.com/user-attachments/assets/95f35f71-aaa3-494f-9b5e-c842114845ef" />
+
 <img width="341" height="183" alt="IMG_1161" src="https://github.com/user-attachments/assets/65cbba65-4102-4a4c-9292-1c66167d2da4" />
 
-
+<br><br>
 P.S. We solved all 4 of the competition side quests / puzzles.
 
 <img width="1401" height="539" alt="IMG_3559" src="https://github.com/user-attachments/assets/e9efcb7b-75da-4cd5-96da-34979492196e" />
