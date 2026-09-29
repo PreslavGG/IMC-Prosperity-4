@@ -14,7 +14,7 @@ Before the leaderboard reset after **Phase 1**, our peak rank was:
 - **74th globally**
 
 <img width="1200" height="630" alt="The talented 10%" src="https://github.com/user-attachments/assets/68e185c6-f3be-46a7-b5d2-208d5f6872e2" />
-<img width="1000" height="630" alt="media-kit" src="https://github.com/user-attachments/assets/79e70195-c3e5-4675-af11-f99f686c5534" />
+<img width="1200" height="630" alt="media-kit" src="https://github.com/user-attachments/assets/79e70195-c3e5-4675-af11-f99f686c5534" />
 
 ## What is IMC Prosperity 4?
 
@@ -111,7 +111,9 @@ We had to allocate a 50,000 budget to three attributes to get the best possible 
 2. **Speed is a rank game.** Only relative position matters. We expected many teams to reason the same way and pick Speed in the 30–40 range to sit just above the median. That clustering means only about 10 percentage points of Speed spend separate a ~0.3 multiplier from a ~0.7 one. The multiplier is steep inside that band, while the extra spend needed to clear it is cheap but worthwhile.
 3. **Decision.** We deliberately bid above the expected cluster rather than inside it, then applied the optimal split to what remained: **Speed 43, Research 15, Scale 42**.
 
-This was our best manual round, we made **217,551 XIRECS** and were 1 off the true optimal speed (which ended up being 42 at a 0.7 multiplier).
+This was our **best manual round**, we made **217,551 XIRECS** and were 1 off the true optimal speed (which ended up being 42 at a 0.7 multiplier).
+
+We finished **Phase 1** with a **PnL of 500,324 XIRECS**.
 
 <img width="791" height="741" alt="IMG_9015" src="https://github.com/user-attachments/assets/5c8113f5-4b74-41c8-9b83-c54eb6986fd8" />
 <img width="806" height="704" alt="IMG_8245" src="https://github.com/user-attachments/assets/f09f83ac-f589-4a2a-a346-8758c79d2204" />
