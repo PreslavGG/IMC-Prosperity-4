@@ -98,6 +98,7 @@ This gave us a robust baseline: earn spread when possible, but do not let invent
 ### Manual Round 1 — "An Intarian Welcome" (clearing-price auction)
 
 We could place one order each on two goods with crossed order books and known resale prices: Dryland Flax at 30, and Ember Mushroom at 20 minus a 0.10 fee. The key detail was that every fill happens at the single clearing price with the highest volume, not at our submitted limit. The bid therefore only decides whether we get filled, not what we pay. We then found the clearing price that has the best volume and profit ratio and bid above it just enough to get filled with at that price with the highest possible volume. We ended up getting the maximum possible PnL in this round
+<img width="350" height="408" alt="IMG_7046" src="https://github.com/user-attachments/assets/b826c9a8-3488-4f60-9008-552848879293" />
 
 ### Manual Round 2 — Research, Scale, Speed (our best manual round)
 
@@ -108,6 +109,10 @@ We had to allocate a 50,000 budget to three attributes to get the best possible 
 3. **Decision.** We deliberately bid above the expected cluster rather than inside it, then applied the optimal split to what remained: **Speed 43, Research 15, Scale 42**.
 
 This was our best manual round, we made >220K and were 1 off the true optimal speed (which ended up being 42 at a 0.7 multiplier).
+
+<img width="791" height="741" alt="IMG_9015" src="https://github.com/user-attachments/assets/5c8113f5-4b74-41c8-9b83-c54eb6986fd8" />
+<img width="806" height="704" alt="IMG_8245" src="https://github.com/user-attachments/assets/f09f83ac-f589-4a2a-a346-8758c79d2204" />
+
 
 ## Rounds 3–4
 
@@ -218,7 +223,9 @@ When inventory was near zero, it could quote both sides more freely. When invent
 
 Sellers each have a hidden reserve price, spread evenly between 670 and 920 in steps of 5, and anything we buy can be resold for 920. We submit two bids: a seller whose reserve is below our first bid b₁ sells to us at b₁; otherwise, a seller whose reserve is below our second bid b₂ sells to us at b₂, but if b₂ is below the average second bid of all teams, our profit on those trades is multiplied by `((920 − avg) / (920 − b₂))³`, which shrinks quickly the further below the average we are.
 
-**Our thinking:** Ignoring the penalty, the second bid that maximises profit is 855–860. However, the penalty is lopsided. Bidding slightly too high costs a few points of margin, while landing below the average cuts profit by a cubic factor. We expected most teams to see the same risk and bid above 860, pushing the average up. We therefore played it safe and bid **b₂ = 870** to stay above the average, giving up a little margin in exchange for protection against the penalty. With b₂ fixed, the first bid has no competitive element and can be solved directly: expected profit is maximised at b₁ = (670 + b₂) / 2, giving **b₁ = 770**.
+<img width="879" height="738" alt="IMG_7159" src="https://github.com/user-attachments/assets/b964b154-3337-4d14-a9e4-29b4e829685f" />
+
+**Our thinking:** Ignoring the penalty, the second bid that maximises profit is 850–860. However, the penalty is lopsided. Bidding slightly too high costs a few points of margin, while landing below the average cuts profit by a cubic factor. We expected most teams to see the same risk and bid above 860, pushing the average up. We therefore played it safe and bid **b₂ = 870** to stay above the average, giving up a little margin in exchange for protection against the penalty. With b₂ fixed, the first bid has no competitive element and can be solved directly: expected profit is maximised at b₁ = (670 + b₂) / 2, giving **b₁ = 770**.
 
 It turned out we overestimated the collective risk aversion and were slightly above the optimal but we still made decent profit
 
@@ -334,6 +341,8 @@ This was one of the clearest lessons from the competition: a relationship can be
 We have a budget of 1,000,000 to split across nine goods, taking a long or short position in each and holding it for one day, using a set of news articles as our only source of information. Allocating x% of the budget to one good costs a fee of `(x / 100)² × 1,000,000`; total allocation cannot exceed 100% and unused budget is lost; and each good's return starts from a fixed anchor but moves within a set range depending on how all teams trade it.
 
 **Our thinking:** The fee grows with the square of position size, so every extra unit costs more than the one before. For a good with expected return r, profit is `r · x · B − x² · B`, which peaks at x = r / 2. A 10% position therefore only pays off if we expect roughly a 20% move. We read each article with two questions in mind: does the news actually move the price, and has it already happened? We bet heavily only on the high-conviction goods, such as an index inclusion that forces fund buying and a health scare that had halted sales. Low-conviction stories, meaning hype, unreliable sources or events already priced in, got very small positions or none at all. Because of the fees, we used only **53% of the budget**, since pushing more capital into weaker ideas would have cost more in fees than it was expected to earn. 
+<img width="339" height="527" alt="IMG_4915" src="https://github.com/user-attachments/assets/95f35f71-aaa3-494f-9b5e-c842114845ef" />
+<img width="341" height="183" alt="IMG_1161" src="https://github.com/user-attachments/assets/65cbba65-4102-4a4c-9292-1c66167d2da4" />
 
 This strategy made 89K which was well above the average and median placing (35K, 60K respectively).
 
