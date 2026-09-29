@@ -113,9 +113,10 @@ We had to allocate a 50,000 budget to three attributes to get the best possible 
 
 This was our **best manual round**, we made **217,551 XIRECS** and were 1 off the true optimal speed (which ended up being 42 at a 0.7 multiplier).
 
-We finished **Phase 1** with a **PnL of 500,324 XIRECS**.
-
 <img width="791" height="741" alt="IMG_9015" src="https://github.com/user-attachments/assets/5c8113f5-4b74-41c8-9b83-c54eb6986fd8" />
+
+We finished **Phase 1** with a **PnL of 500,324 XIRECS** and ranked **74th** overall.
+
 <img width="806" height="704" alt="IMG_8245" src="https://github.com/user-attachments/assets/f09f83ac-f589-4a2a-a346-8758c79d2204" />
 
 
