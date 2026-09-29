@@ -6,15 +6,15 @@ This repository contains our algorithmic trading submissions for **IMC Prosperit
 
 Our final result after **Phase 2**:
 
+- **Top 1.25% globally - 238th place globally out of 19,000+ teams and 30,000+ participants**
 - **3rd place in Italy**
-- **238th place globally out of 19,000 teams and 30,000+ participants**
 
-Before the leaderboard reset after **Phase 1**, we were ranked:
+Before the leaderboard reset after **Phase 1**, our peak rank was:
 
 - **74th globally**
 
 <img width="1200" height="630" alt="The talented 10%" src="https://github.com/user-attachments/assets/68e185c6-f3be-46a7-b5d2-208d5f6872e2" />
-<img width="1200" height="630" alt="media-kit" src="https://github.com/user-attachments/assets/79e70195-c3e5-4675-af11-f99f686c5534" />
+<img width="1000" height="630" alt="media-kit" src="https://github.com/user-attachments/assets/79e70195-c3e5-4675-af11-f99f686c5534" />
 
 ## What is IMC Prosperity 4?
 
