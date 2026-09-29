@@ -357,7 +357,7 @@ We have a budget of 1,000,000 to split across nine goods, taking a long or short
 This strategy made **89,308 XIRECS** which was well above the average and median at 35K and 60K respectively and added to the overall **PnL for Rounds 3-5 of 446,794 XIRECS**.
 
 <img width="339" height="527" alt="IMG_4915" src="https://github.com/user-attachments/assets/95f35f71-aaa3-494f-9b5e-c842114845ef" />
-
+<br>
 <img width="341" height="183" alt="IMG_1161" src="https://github.com/user-attachments/assets/65cbba65-4102-4a4c-9292-1c66167d2da4" />
 
 <br><br>
