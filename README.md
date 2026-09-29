@@ -120,7 +120,7 @@ We finished **Phase 1** with a **PnL of 500,324 XIRECS** and ranked **74th** ove
 <img width="806" height="704" alt="IMG_8245" src="https://github.com/user-attachments/assets/f09f83ac-f589-4a2a-a346-8758c79d2204" />
 
 
-## Rounds 3–4 (Phase 2 - Reset of ranking)
+## Rounds 3–4 (Phase 2 - Reset of leaderboard)
 
 Implemented in [`trader_r3-4.py`](./trader_r3-4.py).
 
